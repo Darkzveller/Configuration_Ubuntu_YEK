@@ -1,0 +1,48 @@
+- Installation de wireguard : 
+	sudo apt install wireguard
+
+- Vérifier que wireguard fonctionne : 
+	nmcli --version
+
+
+- A partir d'Ubuntu 22.04 LTS  
+
+	Ces versions n’ont pas de paquet nommé wireguard-gnome ni network-manager-wireguard séparé,
+	car le support WireGuard est déjà intégré dans NetworkManager depuis la version 1.40 environ.
+
+- En dessous d'Ubuntu 22.04 LTS, pour obtenir l'interface graphique tapé l'une des deux commandes :
+	
+	Méthode : PPA-Dépôt externe géré par un développeur tiers
+	
+	1) Ajouter le dépôt WireGuard à ton système
+		
+		sudo add-apt-repository ppa:wireguard/wireguard
+
+	2) Installer le plugin pour utilisation via interface graphique ( Paramètre -> réseau)
+
+		sudo apt install wireguard-gnome 
+	
+	ou
+		sudo apt install network-manager-wireguard
+
+
+	Méthode : Backports-Version plus récente d’un paquet officiel Ubuntu pour une ancienne version
+	
+	1) Vérifie si le dépôt backports est déjà activé :
+		
+		grep backports /etc/apt/sources.list
+
+	1b) Si tu ne vois rien, active-le en ajoutant la ligne suivante à tes sources :
+
+		sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu focal-backports main restricted universe multiverse"
+ 
+	
+	2) Installer la version récente de NetworkManager (force l’installation depuis le dépôt backports) :
+		
+		sudo apt install -t focal-backports network-manager network-manager-gnome
+
+
+NE PAS OUBLIER DE Redémarrer NetworkManager :
+	
+		sudo systemctl restart NetworkManager
+

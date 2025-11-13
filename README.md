@@ -19,9 +19,22 @@
 
    Voir également dépot suivant : https://github.com/Darkzveller/config-memo_git/blob/main/README.md
 
-- Installation de gcc/gdb
+- Installation de gcc/gdb/make    
 
             sudo apt install build-essential        ou        sudo apt install gdb && sudo apt install gcc
+
+- Installation de g++ , xorg-dev (pour afficher sur une machine windows avec xming), libx11 
+
+            sudo apt install g++ xorg-dev libx11-dev -y
+  
+- Installation d'un zippeur (comme winrar)
+
+            sudo apt install zip -y
+
+- Installation d'un utilitaire en ligne de commande pour télécharger ou envoyer des données via des protocoles comme HTTP, HTTPS, FTP…
+
+            sudo apt install curl -y
+Pour tester libx11, xorg, zip ainsi que curl : https://www.youtube.com/watch?v=S15AtboQjg0
 
 - Lire un disque virtuel (google drive) depuis la ligne de commande (typiquement wsl) :
 

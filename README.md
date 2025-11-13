@@ -19,6 +19,10 @@
 
    Voir également dépot suivant : https://github.com/Darkzveller/config-memo_git/blob/main/README.md
 
+- Installation de l'utilitaire permettant d'afficher l'arborescence des dossiers et fichiers du répertoire courant 
+
+           sudo apt install tree
+  
 - Installation de gcc/gdb/make    
 
             sudo apt install build-essential        ou        sudo apt install gdb && sudo apt install gcc

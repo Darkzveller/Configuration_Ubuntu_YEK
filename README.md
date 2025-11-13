@@ -19,3 +19,11 @@
 
 - Installation de gcc/gdb
     sudo apt install build-essential        ou        sudo apt install gdb && sudo apt install gcc
+
+- Lire un disque virtuel (google drive) depuis la ligne de commande (typiquement wsl) :
+    k étant le disque virtuel qu'on souhaite accèder  
+     Monter manuellement le disque :
+          sudo mkdir /mnt/k                → crée un point de montage.
+          sudo mount -t drvfs K: /mnt/k    → monte le disque K: dans WSL
+    Accèder au disque :
+          cd /mnt/k

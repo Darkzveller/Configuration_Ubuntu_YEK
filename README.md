@@ -52,7 +52,10 @@ Pour tester libx11, xorg, zip ainsi que curl : https://www.youtube.com/watch?v=S
   
           sudo umount /mnt/k               → démonte le disque K:
 
-  
+    Supprimer le dossier qui a permis "d'heberger" le disque virtuel
+
+          sudo rmdir /mnt/H
+
     Accèder au disque :
   
           cd /mnt/k

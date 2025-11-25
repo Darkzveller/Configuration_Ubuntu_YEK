@@ -62,4 +62,8 @@ Pour tester libx11, xorg, zip ainsi que curl : https://www.youtube.com/watch?v=S
     Supprimer le dossier qui a permis "d'heberger" le disque virtuel
 
           sudo rmdir /mnt/H
+- Vs Code
 
+    Si l'on souhiate ouvrir un dossier ou un code sans que cela ouvre une nouvelle fenetre/instance, il faut taper cela suivi dossier ou fichier
+
+      code --reuse-window

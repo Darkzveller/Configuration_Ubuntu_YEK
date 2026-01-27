@@ -40,6 +40,18 @@
             sudo apt install curl -y
 Pour tester libx11, xorg, zip ainsi que curl : https://www.youtube.com/watch?v=S15AtboQjg0
 
+- Configuration bashrc, qui détient la commande simplifier pour tout installer
+
+        ###############################################################################################
+        #                                       Ma configuration 
+
+        alias maj="echo -e 'J effectue l update...\n' && sudo apt update -y && echo -e '\n\nJ effectue l upgrade...\n' && sudo apt upgrade -y"
+
+        alias majg="echo -e 'J effectue l update du get ...\n' && sudo apt-get update -y && echo -e '\n\nJ effectue l upgrade du get ...\n' && sudo apt-get upgrade -y"
+
+        alias install_all="sudo apt install build-essential gdb make g++ libx11-dev git stress xorg-dev xbase-clients tree zip curl x11-apps -y"
+        neofetch
+
 - Lire un disque virtuel (google drive) depuis la ligne de commande (typiquement wsl) :
 
     k étant le disque virtuel qu'on souhaite accèder

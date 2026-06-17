@@ -48,15 +48,27 @@ Pour tester libx11, xorg, zip ainsi que curl : https://www.youtube.com/watch?v=S
         alias maj="echo -e 'J effectue l update...\n' && sudo apt update -y && echo -e '\n\nJ effectue l upgrade...\n' && sudo apt upgrade -y"
         alias majg="echo -e 'J effectue l update du get ...\n' && sudo apt-get update -y && echo -e '\n\nJ effectue l upgrade du get ...\n' && sudo apt-get upgrade -y"
 
-        alias install_all="sudo apt install neofetch build-essential gdb make g++ libx11-dev git stress xorg-dev xbase-clients tree zip curl x11-apps lldb -y"
+        alias install_all="sudo apt install neofetch build-essential gdb make g++ libx11-dev git stress xorg-dev xbase-clients tree zip curl x11-apps lldb htop -y"
 
         alias disqueH="sudo mkdir /mnt/h && sudo mount -t drvfs H: /mnt/h &&  cd /mnt/h"  
-        alias disqueH="sudo mkdir /mnt/g && sudo mount -t drvfs G: /mnt/g &&  cd /mnt/g" 
+        alias disqueG="sudo mkdir /mnt/g && sudo mount -t drvfs G: /mnt/g &&  cd /mnt/g" 
 
-        alias go_to_github="cd /mnt/c/Users/elkat/Documents/Github "
         alias change_password="passwd"
+
+        alias droit_exec='chmod +x'
+        export PATH="$HOME/bin:$PATH"
+
+        #neofetch
+Pensez bien a choisir entre wsl et unbunut desktop pour la version :
+
         alias arret="wsl.exe --shutdown"
-        neofetch
+        alias go_to_github="cd /mnt/c/Users/elkat/Documents/Github "
+
+ou 
+    
+        alias arret='sudo poweroff'
+        alias restart='sudo reboot'
+
 
 - Lire un disque virtuel (google drive) depuis la ligne de commande (typiquement wsl) :
 

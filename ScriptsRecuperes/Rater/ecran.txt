@@ -1,0 +1,92 @@
+#!/bin/bash
+#!/bin/bash
+
+SESSION_TYPE="${XDG_SESSION_TYPE,,}"
+
+case "$1" in
+    on)
+        if [ "$SESSION_TYPE" = "x11" ]; then
+            xset dpms force on
+
+        elif [ "$SESSION_TYPE" = "wayland" ]; then
+            # GNOME Wayland : on simule "écran actif"
+            gdbus call \
+                --session \
+                --dest org.gnome.ScreenSaver \
+                --object-path /org/gnome/ScreenSaver \
+                --method org.gnome.ScreenSaver.SetActive false \
+                >/dev/null 2>&1
+
+        else
+            echo "Session non supportée : $SESSION_TYPE"
+            exit 1
+        fi
+        ;;
+
+    off)
+        if [ "$SESSION_TYPE" = "x11" ]; then
+            xset dpms force off
+
+        elif [ "$SESSION_TYPE" = "wayland" ]; then
+            # GNOME Wayland : verrouille l'écran (équivalent le plus proche)
+            gdbus call \
+                --session \
+                --dest org.gnome.ScreenSaver \
+                --object-path /org/gnome/ScreenSaver \
+                --method org.gnome.ScreenSaver.SetActive true \
+                >/dev/null 2>&1
+
+        else
+            echo "Session non supportée : $SESSION_TYPE"
+            exit 1
+        fi
+        ;;
+
+    status)
+        echo "Session : $SESSION_TYPE"
+        echo "Desktop : $XDG_CURRENT_DESKTOP"
+        ;;
+
+    *)
+        echo "Usage : ecran {on|off|status}"
+        exit 1
+        ;;
+esac
+#SESSION_TYPE=$(echo "$XDG_SESSION_TYPE" | tr '[:upper:]' '[:lower:]')
+#
+#case "$1" in
+#    on)
+#        if [ "$SESSION_TYPE" = "x11" ]; then
+#            xset dpms force on
+#        elif [ "$SESSION_TYPE" = "wayland" ]; then
+#            loginctl unlock-session
+#        else
+#            echo "Type de session inconnu : $SESSION_TYPE"
+#            exit 1
+#        fi
+#        ;;
+#
+#    off)
+#        if [ "$SESSION_TYPE" = "x11" ]; then
+#            xset dpms force off
+#        elif [ "$SESSION_TYPE" = "wayland" ]; then
+#            gdbus call \
+#              --session \
+#              --dest org.gnome.ScreenSaver \
+#              --object-path /org/gnome/ScreenSaver \
+#              --method org.gnome.ScreenSaver.SetActive true
+#        else
+#            echo "Type de session inconnu : $SESSION_TYPE"
+#            exit 1
+#        fi
+#        ;;
+#
+#    status)
+#        echo "Session graphique : $SESSION_TYPE"
+#        ;;
+#
+#    *)
+#        echo "Usage : $0 {on|off|status}"
+#        exit 1
+#        ;;
+#esac

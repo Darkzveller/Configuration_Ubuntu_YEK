@@ -69,6 +69,9 @@ ou
         alias arret='sudo poweroff'
         alias restart='sudo reboot'
 
+- Script d'automatisation installation et configuration du petit pc portable en mode "serveur"
+
+        Télécharger le dossier ScriptsRecuperes
 
 - Lire un disque virtuel (google drive) depuis la ligne de commande (typiquement wsl) :
 

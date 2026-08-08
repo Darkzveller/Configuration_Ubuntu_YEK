@@ -13,7 +13,7 @@ alias majg="echo -e 'J effectue l update du get ...\n' && sudo apt-get update -y
 alias install_all="sudo apt install neofetch build-essential gdb make g++ libx11-dev git stress xorg-dev xbase-clients tree zip curl x11-apps lldb htop -y"
 
 alias disqueH="sudo mkdir /mnt/h && sudo mount -t drvfs H: /mnt/h &&  cd /mnt/h"  
-alias disqueH="sudo mkdir /mnt/g && sudo mount -t drvfs G: /mnt/g &&  cd /mnt/g" 
+alias disqueG="sudo mkdir /mnt/g && sudo mount -t drvfs G: /mnt/g &&  cd /mnt/g" 
 
 alias go_to_github="cd /mnt/c/Users/elkat/Documents/Github "
 alias change_password="passwd"

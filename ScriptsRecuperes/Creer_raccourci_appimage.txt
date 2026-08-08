@@ -1,0 +1,11 @@
+installer 
+ sudo apt install libfuse2t64
+
+Donner les droits d'execution a l'appimages :
+chmod +x ou droit_exec
+
+Déplacer l'appimage dans le dossier images 
+
+On lui créer maintenant son lanceur/raccourci
+
+nano ~/.local/share/applications/Nom_app_image.desktop
